@@ -3,22 +3,22 @@
 namespace Formes.modele
 {
     /// <summary>
-    /// Classe Cube implémente IForme3D
+    /// Classe Sphere implémente IForme3D
     /// </summary>
-    public class Cube : IForme3D
+    public class Sphere : IForme3D
     {
         /// <summary>
-        /// côté du cube
+        /// rayon de la sphère
         /// </summary>
-        private double cote;
+        private readonly double rayon;
 
         /// <summary>
-        /// Constructeur : valorise cote
+        /// Constructeur : valorise rayon
         /// </summary>
-        /// <param name="cote">côté</param>
-        public Cube(double cote)
+        /// <param name="rayon">rayon</param>
+        public Sphere(double rayon)
         {
-            this.cote = cote;
+            this.rayon = rayon;
         }
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace Formes.modele
         /// <returns>aire</returns>
         public double Aire()
         {
-            return Math.Pow(cote, 2) * 6;
+            return 4 * Math.PI * Math.Pow(rayon, 2);
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace Formes.modele
         /// <returns>volume</returns>
         public double Volume()
         {
-            return Math.Pow(cote, 3);
+            return (4 * Math.PI * Math.Pow(rayon, 3)) / 3;
         }
     }
 }
